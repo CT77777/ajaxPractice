@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <link href='//fonts.googleapis.com/css?family=Varela+Round' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="css/style.css">
+    <title>AJAX with JavaScript</title>
+    <script>
+        var xhr = new XMLHttpRequest();
+        xhr.onreadystatechange = () => {
+            if (xhr.readyState === 4) {
+                document.querySelector("#ajax").innerHTML = xhr.responseText;
+            }
+        };
+        xhr.open("get", "./sidebar.html");
+
+        // const buttonLoad = document.querySelector(".load");
+        // buttonLoad.addEventListener("click", () => {
+        //     xhr.send();
+        //     document.querySelector(".load").style.display = "none";
+        // })
+        // can't get the button object before it's loaded.
+
+        function sendAJAX() {
+            xhr.send();
+            document.querySelector(".load").style.display = "none";
+        }
+    </script>
+</head>
+
+<body>
+    <div class="grid-container centered">
+        <div class="grid-100">
+            <div class="contained">
+                <class class="grid-100">
+                    <div class="heading">
+                        <h1>Bring on the AJAX</h1>
+                    </div>
+                    <button class="load" onclick="sendAJAX()">Show</button>
+                    <br>
+                    <br>
+                    <br>
+                    <div id="ajax">
+
+                    </div>
+            </div>
+        </div>
+    </div>
+    </div>
+    <!-- <script>
+        const buttonLoad = document.querySelector(".load");
+        buttonLoad.addEventListener("click", () => {
+            xhr.send();
+            document.querySelector(".load").style.display = "none";
+        })
+    </script> -->
+</body>
+
+</html>
