@@ -13,7 +13,7 @@
                 document.querySelector("#ajax").innerHTML = xhr.responseText;
             }
         };
-        xhr.open("get", "./sidebar.html");
+        xhr.open("GET", "./sidebar.html");
 
         // const buttonLoad = document.querySelector(".load");
         // buttonLoad.addEventListener("click", () => {
@@ -47,13 +47,17 @@
             </div>
         </div>
     </div>
-    </div>
     <!-- <script>
         const buttonLoad = document.querySelector(".load");
         buttonLoad.addEventListener("click", () => {
             xhr.send();
             document.querySelector(".load").style.display = "none";
         })
+
+        function sendAJAX() {
+            xhr.send();
+            document.querySelector(".load").style.display = "none";
+        }
     </script> -->
 </body>
 
